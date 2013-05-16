@@ -2,6 +2,7 @@ desc "Update"
 task :update do
   src_path = "x-editable-src"
   dist_path = "#{src_path}/dist/bootstrap-editable"
+  dist_ext = "#{src_path}/dist/inputs-ext"
 
   system("rm -rf #{src_path}")
 
@@ -13,6 +14,7 @@ task :update do
   system("cp #{dist_path}/img/loading.gif vendor/assets/images/")
   system("cp #{dist_path}/css/bootstrap-editable.css vendor/assets/stylesheets/bootstrap-editable.scss")
   system("cp #{dist_path}/js/bootstrap-editable.js vendor/assets/javascripts/")
+  system("cp #{dist_ext}/wysihtml5/wysihtml5.js vendor/assets/javascripts/editable-bootstrap-wysihtml5.js")
 
   fixes
 
